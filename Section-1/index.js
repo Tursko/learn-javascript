@@ -1,5 +1,3 @@
-//document.getElementById("count-el").innerText = 5
-
 // ctrl + k + c
 
 let count = 0;
@@ -8,6 +6,9 @@ console.log(countEl);
 
 function increment() {
     count++;
-    console.log(count);
     countEl.innerText = count;
+}
+
+function save() {
+    console.log(count);
 }
