@@ -11,14 +11,15 @@ let isAlive = true;
 
 let message = "";
 
-if (sum <= 20) {
-    message = "Do you want to draw a new card?";
-} else if (sum === 21) {
-    hasBlackJack = true;
-    message = "BlackJack! You win!";
-} else {
-    isAlive = false;
-    message = "You lose!";
+function startGame() {
+    if (sum <= 20) {
+        message = "Do you want to draw a new card?";
+    } else if (sum === 21) {
+        hasBlackJack = true;
+        message = "BlackJack! You win!";
+    } else {
+        isAlive = false;
+        message = "You lose!";
+    }
+    console.log(message);
 }
-
-console.log(message);
