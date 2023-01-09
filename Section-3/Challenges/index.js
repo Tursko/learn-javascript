@@ -36,3 +36,10 @@ for (let i = 0; i < words.length; i++) {
 }
 console.log(sentence);
 greetingEl.textContent = sentence;
+
+console.log("-Random number generation-");
+// Generates a random number between 0 and 1 (not inclusive to 1)
+function rollDice() {
+    return Math.floor(Math.random()*6) + 1;
+}
+console.log(rollDice());
