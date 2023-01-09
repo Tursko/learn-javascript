@@ -8,6 +8,14 @@ let sumEl = document.getElementById("sum-el");
 //let sumEl = document.querySelector("#sum-el"); // element with id sum-el
 let cardsEl = document.getElementById("cards-el");
 
+let player = {
+    name: "Person",
+    chips: 145
+}
+
+let playerEl = document.getElementById("player-el");
+playerEl.textContent = player.name + ": $" + player.chips;
+
 function getRandomCard() {
     // Random number between 1 - 13
     let randomNum = Math.floor(Math.random() * 13) + 1;
@@ -20,7 +28,7 @@ function getRandomCard() {
 }
 
 function startGame() {
-    let isAlive = true;
+    isAlive = true;
 
     let firstCard = getRandomCard();
     let secondCard = getRandomCard();
@@ -51,9 +59,10 @@ function renderGame() {
 }
 
 function newCard() {
-    let card = getRandomCard();
-    sum += card;
-    cards.push(card);
-
-    renderGame();
+    if (isAlive && hasBlackJack === false) {
+        let card = getRandomCard();
+        sum += card;
+        cards.push(card);
+        renderGame();
+    }
 }

@@ -43,3 +43,25 @@ function rollDice() {
     return Math.floor(Math.random()*6) + 1;
 }
 console.log(rollDice());
+
+// Obects - store data
+console.log("-Intro to objects-")
+let course = { 
+    title: "Learn CSS Grid for free",
+    lessons: 16,
+    creator: "Name Name",
+    length: 63,
+    level: 2,
+    isFree: true, 
+    tags: ["html", "css"]
+}
+console.log(course.tags);
+console.log(course["tags"]); // bracket notation
+
+let castle = {
+    title: "Castle Living",
+    price: 190,
+    isSuperHost: true,
+    images: ["image1", "image2", "image3"]
+}
+console.log(castle.images);
