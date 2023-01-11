@@ -16,11 +16,12 @@ inputBtn.addEventListener("click", function() {
 function renderEntries() {
     let listItems = "";
     for (let i = 0; i < myEntries.length; i++) {
-        // Alternative solution
-        //const listItem = document.createElement("li");
-        //listItem.textContent = myEntries[i];
-        //ulEl.append(listItem);
-        listItems += "<li>" + myEntries[i] + "</li>";
+        listItems += 
+        `<li>
+            <a target='_blank' href='${myEntries[i]}'>
+                ${myEntries[i]}
+            </a>
+        </li>`;
     }
     ulEl.innerHTML = listItems;
 }
