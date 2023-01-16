@@ -1,0 +1,8 @@
+{
+    "manifest_version": 3,
+    "version": "1",
+    "name": "Link tracker",
+    "action" : {
+        "default_popup": "index.html"
+    }
+}
