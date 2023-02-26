@@ -9,13 +9,13 @@ const ulEl = document.getElementById("ul-el");
 const localStorageEntries = JSON.parse(localStorage.getItem(entriesName));
  if (localStorageEntries) {
     myEntries = localStorageEntries;
-    renderEntries();
+    render(myEntries);
 }
 
 deleteBtn.addEventListener("dblclick", function() {
     localStorage.removeItem(entriesName);
     myEntries = [];
-    renderEntries();
+    render(myEntries);
 })
 
 inputBtn.addEventListener("click", function() {
@@ -26,16 +26,16 @@ inputBtn.addEventListener("click", function() {
         localStorage.setItem(entriesName, JSON.stringify(myEntries));
     }
 
-    renderEntries();
+    render(myEntries);
 });
 
-function renderEntries() {
+function render(aEntries) {
     let listItems = "";
-    for (let i = 0; i < myEntries.length; i++) {
+    for (let i = 0; i < aEntries.length; i++) {
         listItems += 
         `<li>
-            <a target='_blank' href='${myEntries[i]}'>
-                ${myEntries[i]}
+            <a target='_blank' href='${aEntries[i]}'>
+                ${aEntries[i]}
             </a>
         </li>`;
     }
