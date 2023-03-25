@@ -4,6 +4,7 @@ const entriesName = "myEntires";
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 const deleteBtn = document.getElementById("delete-btn");
+const saveTabBtn = document.getElementById("saveTabBtn");
 const ulEl = document.getElementById("ul-el");
 
 const localStorageEntries = JSON.parse(localStorage.getItem(entriesName));
@@ -11,6 +12,14 @@ const localStorageEntries = JSON.parse(localStorage.getItem(entriesName));
     myEntries = localStorageEntries;
     render(myEntries);
 }
+
+saveTabBtn.addEventListener("click", function() {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        myEntries.push(tabs[0].url);
+        localStorage.setItem(entriesName, JSON.stringify(myEntries));
+        render(myEntries);
+    });
+})
 
 deleteBtn.addEventListener("dblclick", function() {
     localStorage.removeItem(entriesName);
